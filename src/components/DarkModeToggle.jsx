@@ -4,7 +4,10 @@ const DarkModeToggle = () => {
   const [darkMode, setDarkMode] = useState(false)
 
   return (
-    <button onClick={() => setDarkMode(!darkMode)}>
+    <button
+      aria-label={darkMode ? 'Toggle Light Mode' : 'Toggle Dark Mode'}
+      onClick={() => setDarkMode(!darkMode)}
+    >
       {darkMode ? 'Light' : 'Dark'}
     </button>
   )
