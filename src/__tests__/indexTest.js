@@ -6,14 +6,14 @@ import '@testing-library/jest-dom'
 
 test('toggles dark mode on button click', () => {
   render(<App />)
-  const toggleBtn = screen.getByRole('button', { name: /toggle/i })
+  const toggleBtn = screen.getByText('Dark')
   expect(toggleBtn).toBeInTheDocument()
 
   fireEvent.click(toggleBtn)
-  expect(toggleBtn.textContent.toLowerCase()).toMatch(/light/i)
+  expect(toggleBtn.textContent).toBe('Light')
 
   fireEvent.click(toggleBtn)
-  expect(toggleBtn.textContent.toLowerCase()).toMatch(/dark/i)
+  expect(toggleBtn.textContent).toBe('Dark')
 })
 
 test('filters products by category', () => {
